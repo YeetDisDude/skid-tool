@@ -33,7 +33,7 @@ Version 0.1
         offset = eval(input(f"{Fore.LIGHTCYAN_EX}Enter your offset with 0x:{Fore.RESET}\n"))
         bytes = int(input(f"{Fore.LIGHTCYAN_EX}How many bytes do you want to get?{Fore.RESET}\n"))
         with open(lib, 'rb') as f:
-            f.seek(0x3F89CE4)
+            f.seek(offset)
             hexfromoffset = f.read(bytes).hex().upper()
         print(f"{Fore.LIGHTRED_EX}{bytes}{Fore.RESET} Bytes from the offset {Fore.LIGHTRED_EX}0x{offset}{Fore.RESET}:\n{hexfromoffset}")
         pyperclip.copy(hexfromoffset)
